@@ -55,8 +55,8 @@ def get_printable_history(history_url):
     if len(history)<15:
         return 'coudn`t find trading history'
     history=history[history.find('[[')+2:-3].split('],[')
-    out =' _____________________________________________________________________________ \n'
-    out+='/                                 trading history                             \\\n'
+    out =' ______________________________________________________________________________ \n'
+    out+='/                                 trading history                              \\\n'
     out+='|'+fixlen('date',9)+'|'+fixlen('final',11)+'|'+fixlen('min',11)+'|'+fixlen('max',11)+'|'+fixlen('count',11)+'|'+fixlen('volume',7)+'|'+fixlen('cost',12)+'|\n'
     for row in history:
         data=row[1:-1].split("','")
