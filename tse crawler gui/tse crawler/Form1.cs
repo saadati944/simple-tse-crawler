@@ -15,6 +15,9 @@ namespace tse_crawler
         public Form1()
         {
             InitializeComponent();
+            gettseinfo x = new gettseinfo();
+
+            MessageBox.Show(x.downloadString("http://www.tsetmc.com/tsev2/data/search.aspx?skey=%D8%B4%D8%B3%D8%AA%D8%A7"));
         }
     }
 }

@@ -1,0 +1,8 @@
+I:\projects\python\2\bors\tse crawler\tse crawler gui\tse crawler\obj\Debug\tse crawler.csprojAssemblyReference.cache
+I:\projects\python\2\bors\tse crawler\tse crawler gui\tse crawler\obj\Debug\tse_crawler.Properties.Resources.resources
+I:\projects\python\2\bors\tse crawler\tse crawler gui\tse crawler\obj\Debug\tse crawler.csproj.GenerateResource.cache
+I:\projects\python\2\bors\tse crawler\tse crawler gui\tse crawler\bin\Debug\tse crawler.exe.config
+I:\projects\python\2\bors\tse crawler\tse crawler gui\tse crawler\bin\Debug\tse crawler.exe
+I:\projects\python\2\bors\tse crawler\tse crawler gui\tse crawler\bin\Debug\tse crawler.pdb
+I:\projects\python\2\bors\tse crawler\tse crawler gui\tse crawler\obj\Debug\tse crawler.exe
+I:\projects\python\2\bors\tse crawler\tse crawler gui\tse crawler\obj\Debug\tse crawler.pdb
