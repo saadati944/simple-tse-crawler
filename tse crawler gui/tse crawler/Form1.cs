@@ -16,8 +16,11 @@ namespace tse_crawler
         {
             InitializeComponent();
             gettseinfo x = new gettseinfo();
-
-            MessageBox.Show(x.downloadString("http://www.tsetmc.com/tsev2/data/search.aspx?skey=%D8%B4%D8%B3%D8%AA%D8%A7"));
+            var t=x.get_history();
+            foreach(history y in t)
+            {
+                MessageBox.Show(y.date + " - " + y.final + " - " + y.min + " - " + y.max + " - " + y.count + " - " + y.volume + " - " + y.cost);
+            }
         }
     }
 }
