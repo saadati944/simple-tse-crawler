@@ -40,22 +40,63 @@ namespace tse_crawler
         public history[] get_history(string history_url)
         {
             string source = downloadString(history_url);
-            
+
             //start of the history
             int sind = source.IndexOf("=[['") + 4;
             //end of the history
             int eind = source.IndexOf("']];", sind);
             source = source.Substring(sind, eind - sind);
-            string[] lines = source.Split(new string[]{"'],['"},StringSplitOptions.None);
+            string[] lines = source.Split(new string[] { "'],['" }, StringSplitOptions.None);
             List<history> histories = new List<history>();
-            for(int j = 0; j < lines.Length; j++)
+            for (int j = 0; j < lines.Length; j++)
             {
-                string[] data = lines[j].Split(new string[] {"','"}, StringSplitOptions.None);
+                string[] data = lines[j].Split(new string[] { "','" }, StringSplitOptions.None);
                 histories.Add(new history(data[0], data[1], data[2], data[3], data[4], data[5], data[6]));
             }
             return histories.ToArray();
         }
-   public string decompress(byte[] content)
+        public table get_table(string table_url)
+        {
+            string[] rows = downloadString(table_url).Split(';')[2].Split(',');
+            table t = new table("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+            try
+            {
+                for (int i = 0; i < rows.Length; i++)
+                {
+                    string[] row = rows[i].Split('@');
+                    if (i == 0)
+                    {
+                        t.row1buycount     = row[0];
+                        t.row1buyvolume    = row[1];
+                        t.row1buycost      = row[2];
+                        t.row1sellcost     = row[3];
+                        t.row1sellvolume   = row[4];
+                        t.row1sellcount    = row[5];
+                    }
+                    else if (i == 1)
+                    {
+                        t.row2buycount = row[0];
+                        t.row2buyvolume    = row[1];
+                        t.row2buycost      = row[2];
+                        t.row2sellcost     = row[3];
+                        t.row2sellvolume   = row[4];
+                        t.row2sellcount    = row[5];
+                    }
+                    else if (i == 2)
+                    {
+                        t.row3buycount     = row[0];
+                        t.row3buyvolume    = row[1];
+                        t.row3buycost      = row[2];
+                        t.row3sellcost     = row[3];
+                        t.row3sellvolume   = row[4];
+                        t.row3sellcount = row[5];
+                    }
+                }
+            }
+            catch { }
+            return t;
+        }
+        public string decompress(byte[] content)
         {
             var from = new MemoryStream(content);
             var to = new MemoryStream();
